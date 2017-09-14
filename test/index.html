@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>selectToDatalist</title>
+</head>
+<body>
+	<h1>selectToDatalist</h1>
+	<form onInput="out.innerHTML = name.value + ' of house ' + house.value">
+		<label>
+			<span>Name</span>
+			<input type="text" name="name" placeholder="Enter your name">
+		</label>
+		<br>
+		<label>
+			<span>House</span>
+			<select name="house" id="house" placeholder="Hall your house">
+				<option value="">Select your house</option>
+				<option value="Arryn">Arryn</option>
+				<option value="Baratheon">Baratheon</option>
+				<option value="Bolton">Bolton</option>
+				<option value="Frey">Frey</option>
+				<option value="Greyjoy">Greyjoy</option>
+				<option value="Lannister">Lannister</option>
+				<option value="Martell">Martell</option>
+				<option value="Mormont">Mormont</option>
+				<option value="Stark" selected>Stark</option>
+				<option value="Targaryen">Targaryen</option>
+				<option value="Tully">Tully</option>
+				<option value="Tyrell">Tyrell</option>
+			</select>
+		</label>
+		<br><br>
+		<output name="out"></output>
+	</form>
+	<script src="../select-to-datalist.js"></script>
+	<script>
+		window.onload = function() {
+			var houses = document.getElementById("house")
+			,	placeholder = "Type in your house"
+			,	datalistInput
+			;
+
+			datalistInput = selectToDatalist(houses, placeholder);
+		}
+	</script>
+</body>
+</html>
