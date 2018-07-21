@@ -1,8 +1,8 @@
 /**
- * @param {HTMLElement} - select
- * @param {string} - placeholder
+ * @param {HTMLElement} select
+ * @param {string} placeholder
  */
-function selectToDatalist( select, placeholder ) {
+function selectToDatalist ( select, placeholder ) {
 	var eSelect = select
 	,	options= eSelect.children
 	,	eInput = document.createElement("input")
@@ -13,7 +13,7 @@ function selectToDatalist( select, placeholder ) {
 	for ( var o in options ) {
 		option = options[o];
 
-		if ( !(option && option.value) ) { continue; }
+		if ( !(option && "value" in option) ) { continue; }
 
 		if ( option.selected ) {
 			selected = option.value;
